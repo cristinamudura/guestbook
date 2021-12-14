@@ -10,7 +10,7 @@ spec:
   project: default
   source:
     path: guestbook-subchart
-    repoURL: https://github.com/cristinamudura/guestbook
+    repoURL: https://github.com/cristinamudura/guestbook.git
     targetRevision: HEAD
   syncPolicy:
     automated:
