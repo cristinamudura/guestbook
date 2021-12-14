@@ -1,25 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: guestbook-helm
+  name: guestbook-subchart
   namespace: argocd
 spec:
   destination:
-    namespace: guestbook-helm
+    namespace: guestbook-subchart
     server: https://kubernetes.default.svc
   project: default
-
   source:
-    helm:
-      parameters:
-       - name: replicaCount
-         value: "3"
-       - name: service.type
-         value: "LoadBalancer"
-    chart: guestbook
-    repoURL: https://charts.ikubernetes.com
-    targetRevision: 1.0.0
-
+    path: guestbook-subchart
+    repoURL: https://github.com/cristinamudura/guestbook
+    targetRevision: HEAD
   syncPolicy:
     automated:
       prune: true
