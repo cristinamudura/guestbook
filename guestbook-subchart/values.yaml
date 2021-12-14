@@ -4,3 +4,4 @@ guestbook:
   service:
     type: LoadBalancer
     port: 80
+    nodePort: 32002
